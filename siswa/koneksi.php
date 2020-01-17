@@ -2,7 +2,7 @@
 $host = "localhost"; // server
 $user = "root"; // username
 $pass = ""; // password
-$database = "datamahasiswa"; // nama database
+$database = "datasiswa"; // nama database
 
 $koneksi = mysqli_connect($host, $user, $pass, $database); // menggunakan mysqli_connect
 
