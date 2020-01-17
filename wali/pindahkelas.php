@@ -12,7 +12,7 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 			
 			<?php
 			$nim = $_GET['nim']; // assigment nim dengan nilai nim yang akan diedit
-			$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE nim='$nim'"); // query untuk memilih entri data dengan nilai nim terpilih
+			$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE nim='$nim'"); // query untuk memilih entri data dengan nilai nim terpilih
 			if(mysqli_num_rows($sql) == 0){
 				header("Location: index.php");
 			}else{
@@ -21,7 +21,7 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 			if(isset($_POST['save'])){ // jika tombol 'Simpan' dengan properti name="save" ditekan
 				$kelas	    	 = $_POST['kelas'];
 			
-				$update = mysqli_query($koneksi, "UPDATE tbl_mahasiswa SET kelas='$kelas' WHERE nim='$nim'") or die(mysqli_error()); // query untuk mengupdate nilai entri dalam database
+				$update = mysqli_query($koneksi, "UPDATE tbl_siswa SET kelas='$kelas' WHERE nim='$nim'") or die(mysqli_error()); // query untuk mengupdate nilai entri dalam database
 				if($update){ // jika query update berhasil dieksekusi
 					header("Location: pindahkelas.php?nim=".$nim."&pesan=sukses"); // tambahkan pesan=sukses pada url
 				}else{ // jika query update gagal dieksekusi
