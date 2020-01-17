@@ -16,7 +16,7 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 			</div> <!-- /.jumbotron -->
 				<?php
 				$username = $_SESSION['admin']; // mengambil username dari session yang login
-				$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE username='$username'"); // query memilih entri username pada database
+				$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE username='$username'"); // query memilih entri username pada database
 				if(mysqli_num_rows($sql) == 0){
 				header("Location: index.php");
 				}else{
@@ -35,7 +35,7 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 					</tr>
 					<?php	
 					//$walikelas = 'walikelas';				
-					$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE level='guru' "); // query jika filter dipilih					
+					$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE level='guru' "); // query jika filter dipilih					
 					if(mysqli_num_rows($sql) == 0){ 
 						echo '<tr><td colspan="14">Data Tidak Ada.</td></tr>'; // jika tidak ada entri di database maka tampilkan 'Data Tidak Ada.'
 					}else{ // jika terdapat entri maka tampilkan datanya
