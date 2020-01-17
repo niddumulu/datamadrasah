@@ -24,11 +24,11 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 				$pass2           = $_POST['pass2'];
 				$level			 = $_POST['level'];
 				
-				$cek = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE nim='$nim'"); // query untuk memilih entri dengan nim terpilih
+				$cek = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE nim='$nim'"); // query untuk memilih entri dengan nim terpilih
 				if(mysqli_num_rows($cek) == 0){ // mengecek apakah nim yang akan ditambahkan tidak ada dalam database
 					if($pass1 == $pass2){ // mengecek apakah nilai pada pass1 dan pass2 bernilai sama
 						$pass = md5($pass1); // assigment variabel pass dengan nilai pass1 yang sudah dienkripsi dengan md5
-						$insert = mysqli_query($koneksi, "INSERT INTO tbl_mahasiswa(nim, nama, jenis_kelamin, username, password, level) VALUES('$nim','$nama', '$jenis_kelamin', '$username',  '$pass', '$level')") or die(mysqli_error()); // query untuk menambahkan data ke dalam database
+						$insert = mysqli_query($koneksi, "INSERT INTO tbl_siswa(nim, nama, jenis_kelamin, username, password, level) VALUES('$nim','$nama', '$jenis_kelamin', '$username',  '$pass', '$level')") or die(mysqli_error()); // query untuk menambahkan data ke dalam database
 						//$insert = mysqli_query($koneksi, "INSERT INTO tbl_nilaiqh(nim, username) VALUES('$nim','$username')") or die(mysqli_error()); // query untuk menambahkan data ke dalam database
 
 						if($insert){ // jika query insert berhasil dieksekusi
