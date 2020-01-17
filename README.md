@@ -7,3 +7,5 @@ Ada 3 file koneksi.php
 - di folder admin upload walikelas
 
 Masih banyak kekurangan.
+
+![Test Image 6](img/logo_ilmututorial_32x32.jpg)
