@@ -31,7 +31,7 @@ require("koneksi.php"); // memanggil file koneksi.php untuk koneksi ke database
 		$user = mysqli_real_escape_string($koneksi, htmlentities($_POST['username']));
 		$pass = mysqli_real_escape_string($koneksi, htmlentities(md5($_POST['password'])));
 
-		$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE username='$user' AND password='$pass'") or die(mysqli_error($koneksi));
+		$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE username='$user' AND password='$pass'") or die(mysqli_error($koneksi));
 		if(mysqli_num_rows($sql) == 0){
 			echo '<center><span class="label label-danger">User tidak ditemukan</span></center>';
 		}else{
