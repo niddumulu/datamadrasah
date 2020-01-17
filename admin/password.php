@@ -19,14 +19,14 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 				$password1 	= $_POST['password1'];
 				$password2 	= $_POST['password2'];
 				
-				$cek = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE nim='$nim'"); // query memilih nim dan password
+				$cek = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE nim='$nim'"); // query memilih nim dan password
 				if(mysqli_num_rows($cek) == 0){ // mengecek query $cek jika password yang dimasukkan tidak sesuai dengan nim
 					echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Password Lama salah, masukan password yang benar</div>'; // maka tampilkan 'Password salah, masukan password yang benar'
 				}else{
 					if($password1 == $password2){ // jika nilai password1 dan password2 bernilai sama
 						if(strlen($password1) >= 4){ // mengecek panjang password minimal 4 karakter
 							$pass = md5($password1); // enkripsi password dengan md5
-							$update = mysqli_query($koneksi, "UPDATE tbl_mahasiswa SET password='$pass' WHERE nim='$nim'"); // query update password dari nim yang dipilih
+							$update = mysqli_query($koneksi, "UPDATE tbl_siswa SET password='$pass' WHERE nim='$nim'"); // query update password dari nim yang dipilih
 							if($update){ // jika query update berhasil dieksekusi
 								echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Password berhasil dirubah.</div>'; // maka tampilkan 'Password berhasil dirubah.'
 							}else{ // jika query update gagal dieksekusi
