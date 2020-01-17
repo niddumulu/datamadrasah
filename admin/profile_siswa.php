@@ -13,7 +13,7 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 			<?php
 			$nim = $_GET['nim']; // mengambil data nim dari nim yang terpilih
 			
-			$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE nim='$nim'"); // query memilih entri nim pada database
+			$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE nim='$nim'"); // query memilih entri nim pada database
 			if(mysqli_num_rows($sql) == 0){
 				header("Location: index.php");
 			}else{
@@ -21,7 +21,7 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 			}
 			
 			if(isset($_GET['aksi']) == 'delete'){ // jika tombol 'Hapus Data' pada baris 87 ditekan
-				$delete = mysqli_query($koneksi, "DELETE FROM tbl_mahasiswa WHERE nim='$nim'"); // query delete entri dengan nim terpilih
+				$delete = mysqli_query($koneksi, "DELETE FROM tbl_siswa WHERE nim='$nim'"); // query delete entri dengan nim terpilih
 				if($delete){ // jika query delete berhasil dieksekusi
 					echo '<div class="alert alert-danger alert-dismissable">><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Data berhasil dihapus.</div>'; // maka tampilkan 'Data berhasil dihapus.'
 				}else{ // jika query delete gagal dieksekusi
