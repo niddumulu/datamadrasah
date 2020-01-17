@@ -24,7 +24,7 @@ include("akses_user.php"); // restriksi halaman user
 	});
 	</script>
 	<!--
-	Project      : Data Mahasiswa v2.0
+	Project      : Data Siswa v2.0
 	Description	 : CRUD (Create, read, Update, Delete) PHP, MySQLi dan Bootstrap
 	Author		 : Firman Dwi Jayanto
 	Author URI   : http://www.facebook.com/firmandije 
