@@ -5,7 +5,7 @@ class database{
 	var $host = "localhost";
 	var $uname = "root";
 	var $pass = "";
-	var $db = "datasiswa";
+	var $db = "data_siswa";
 
 	function __construct(){
 		mysql_connect($this->host, $this->uname, $this->pass);
