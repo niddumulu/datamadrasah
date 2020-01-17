@@ -35,7 +35,7 @@ for ($i=2; $i<=$jumlah_baris; $i++){
 	if($nim != "" && $kelas !="" ){
 		// input data ke database (table data_pegawai)
 		$password = md5('12345');
-		mysqli_query($koneksi,"INSERT into tbl_mahasiswa values('','$username','$password','siswa','$nim','$nama','$jenis_kelamin','','','','','','$kelas','','','','','','','','','','','','','','','','','')");
+		mysqli_query($koneksi,"INSERT into tbl_siswa values('','$username','$password','siswa','$nim','$nama','$jenis_kelamin','','','','','','$kelas','','','','','','','','','','','','','','','','','')");
 		$berhasil++;
 	}
 }
