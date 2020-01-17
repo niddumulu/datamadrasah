@@ -12,7 +12,7 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 			<?php
 			$username = $_SESSION['user']; // mengambil username dari session yang login
 			$nim = $_GET['nim'];
-			$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE nim='$nim'"); // query memilih entri username pada database
+			$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE nim='$nim'"); // query memilih entri username pada database
 			if(mysqli_num_rows($sql) == 0){
 				header("Location: index.php");
 			}else{
