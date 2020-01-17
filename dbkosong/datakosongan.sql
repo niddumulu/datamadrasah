@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_mahasiswa`
+-- Struktur dari tabel `tbl_siswa`
 --
 
-CREATE TABLE `tbl_mahasiswa` (
+CREATE TABLE `tbl_siswa` (
   `ID` bigint(20) UNSIGNED NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(32) NOT NULL,
@@ -60,10 +60,10 @@ CREATE TABLE `tbl_mahasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `tbl_mahasiswa`
+-- Dumping data untuk tabel `tbl_siswa`
 --
 
-INSERT INTO `tbl_mahasiswa` (`ID`, `username`, `password`, `level`, `nim`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `alamat_sekarang`, `no_telepon`, `email`, `kelas`, `nisn`, `nik`, `nokk`, `nikayah`, `nikibu`, `namaayah`, `namaibu`, `jumlahsaudara`, `anakke`, `npsn`, `namasdmi`, `nopstun`, `nilaiun`, `blankoij`, `blankoskh`, `walikelas`, `alasan`) VALUES
+INSERT INTO `tbl_siswa` (`ID`, `username`, `password`, `level`, `nim`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `alamat_sekarang`, `no_telepon`, `email`, `kelas`, `nisn`, `nik`, `nokk`, `nikayah`, `nikibu`, `namaayah`, `namaibu`, `jumlahsaudara`, `anakke`, `npsn`, `namasdmi`, `nopstun`, `nilaiun`, `blankoij`, `blankoskh`, `walikelas`, `alasan`) VALUES
 (7, 'bangnidd', 'd63b67a7773b5653d54c595e98c86ebf', 'admin', 'admin', 'M HASAN ULUMUDDIN', 'Laki-Laki', 'Banyumas', '1986-05-29', 'banyumas', '085227186724', 'kangulumuddin@gmail.com', 'admin', '', '', '', '', 0, '', '', 0, 0, 0, '', '', 0, '0', '', '', '');
 
 --
@@ -71,9 +71,9 @@ INSERT INTO `tbl_mahasiswa` (`ID`, `username`, `password`, `level`, `nim`, `nama
 --
 
 --
--- Indexes for table `tbl_mahasiswa`
+-- Indexes for table `tbl_siswa`
 --
-ALTER TABLE `tbl_mahasiswa`
+ALTER TABLE `tbl_siswa`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -81,9 +81,9 @@ ALTER TABLE `tbl_mahasiswa`
 --
 
 --
--- AUTO_INCREMENT for table `tbl_mahasiswa`
+-- AUTO_INCREMENT for table `tbl_siswa`
 --
-ALTER TABLE `tbl_mahasiswa`
+ALTER TABLE `tbl_siswa`
   MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1791;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
