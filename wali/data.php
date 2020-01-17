@@ -11,7 +11,7 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 			<hr />
 				<?php
 				$username = $_SESSION['user']; // mengambil username dari session yang login
-				$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE username='$username'"); // query memilih entri username pada database
+				$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE username='$username'"); // query memilih entri username pada database
 				if(mysqli_num_rows($sql) == 0){
 				header("Location: index.php");
 				}else{
@@ -32,7 +32,7 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 					
 					$wakel = $row['walikelas'];
 					echo $wakel;
-					$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE kelas='$wakel' ORDER BY nama ASC"); // query jika filter dipilih
+					$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE kelas='$wakel' ORDER BY nama ASC"); // query jika filter dipilih
 					//$sqlsiswa = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE nim ");
 					//mysqli_num_rows($sqlsiswa);
 					if(mysqli_num_rows($sql) == 0){ 
