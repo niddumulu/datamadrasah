@@ -21,7 +21,7 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 			</form>
 			<?php
 			$username = $_SESSION['user']; // assigment username dengan nilai username yang akan diedit
-			$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE username='$username'"); // query untuk memilih entri data dengan nilai username terpilih
+			$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE username='$username'"); // query untuk memilih entri data dengan nilai username terpilih
 			if(mysqli_num_rows($sql) == 0){
 				header("Location: index.php");
 			}else{
@@ -38,7 +38,7 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 				$no_telepon		 = $_POST['no_telepon'];
 				$email  		 = $_POST['email'];
 				
-				$update = mysqli_query($koneksi, "UPDATE tbl_mahasiswa SET nama='$nama', jenis_kelamin='$jenis_kelamin', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', alamat_sekarang='$alamat_sekarang', no_telepon='$no_telepon', email='$email' WHERE username='$username'") or die(mysqli_error()); // query untuk mengupdate nilai entri dalam database
+				$update = mysqli_query($koneksi, "UPDATE tbl_siswa SET nama='$nama', jenis_kelamin='$jenis_kelamin', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', alamat_sekarang='$alamat_sekarang', no_telepon='$no_telepon', email='$email' WHERE username='$username'") or die(mysqli_error()); // query untuk mengupdate nilai entri dalam database
 				if($update){ // jika query update berhasil dieksekusi
 					header("Location: hal1.php?username=".$username."&pesan=sukses"); // tambahkan pesan=sukses pada url
 				}else{ // jika query update gagal dieksekusi
