@@ -30,7 +30,7 @@ include("upload/koneksi.php"); // memanggil file koneksi.php untuk koneksi ke da
 						<th>JK</th>
 					</tr>
 					<?php					
-					$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE kelas='' AND walikelas='' "); // query jika filter dipilih					
+					$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE kelas='' AND walikelas='' "); // query jika filter dipilih					
 					if(mysqli_num_rows($sql) == 0){ 
 						echo '<tr><td colspan="14">Data Tidak Ada.</td></tr>'; // jika tidak ada entri di database maka tampilkan 'Data Tidak Ada.'
 					}else{ // jika terdapat entri maka tampilkan datanya
