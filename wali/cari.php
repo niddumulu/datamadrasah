@@ -12,7 +12,7 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 			<hr />
 			
 			<?php
-			$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE nim='$nim'"); // query untuk memilih entri dengan nim terpilih
+			$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE nim='$nim'"); // query untuk memilih entri dengan nim terpilih
 			if(mysqli_num_rows($sql) == 0){
 				header("Location: no_result.php");
 			}else{
