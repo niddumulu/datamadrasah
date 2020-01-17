@@ -12,26 +12,26 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 			
 			<?php
 			$nim = $_GET['nim']; // assigment nim dengan nilai nim yang akan diedit
-			$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE nim='$nim'"); // query untuk memilih entri data dengan nilai nim terpilih
+			$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE nim='$nim'"); // query untuk memilih entri data dengan nilai nim terpilih
 			if(mysqli_num_rows($sql) == 0){
 				header("Location: index.php");
 			}else{
 				$row = mysqli_fetch_assoc($sql);
 			}
 			if(isset($_POST['save'])){ // jika tombol 'Simpan' dengan properti name="save" ditekan
-				$username		 = $_POST['username'];
-				$level		     = $_POST['level'];
-				$nama		     = $_POST['nama'];
+				$username	 = $_POST['username'];
+				$level		 = $_POST['level'];
+				$nama		 = $_POST['nama'];
 				$jenis_kelamin   = $_POST['jenis_kelamin'];
 				$tempat_lahir	 = $_POST['tempat_lahir'];
 				$tanggal_lahir	 = $_POST['tanggal_lahir'];
 				$alamat_sekarang = $_POST['alamat_sekarang'];
-				$no_telepon		 = $_POST['no_telepon'];
-				$email  		 = $_POST['email'];
+				$no_telepon	 = $_POST['no_telepon'];
+				$email  	 = $_POST['email'];
 				$kelas	    	 = $_POST['kelas'];
 				//$walikelas	     = $_POST['walikelas'];
 				
-				$update = mysqli_query($koneksi, "UPDATE tbl_mahasiswa SET username='$username', level='$level', nama='$nama', jenis_kelamin='$jenis_kelamin', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', alamat_sekarang='$alamat_sekarang', no_telepon='$no_telepon', kelas='$kelas', email='$email' WHERE nim='$nim'") or die(mysqli_error()); // query untuk mengupdate nilai entri dalam database
+				$update = mysqli_query($koneksi, "UPDATE tbl_siswa SET username='$username', level='$level', nama='$nama', jenis_kelamin='$jenis_kelamin', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', alamat_sekarang='$alamat_sekarang', no_telepon='$no_telepon', kelas='$kelas', email='$email' WHERE nim='$nim'") or die(mysqli_error()); // query untuk mengupdate nilai entri dalam database
 				if($update){ // jika query update berhasil dieksekusi
 					header("Location: edit_profile_wali.php?nim=".$nim."&pesan=sukses"); // tambahkan pesan=sukses pada url
 				}else{ // jika query update gagal dieksekusi
