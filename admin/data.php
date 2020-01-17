@@ -13,11 +13,11 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 			<?php
 			if(isset($_GET['aksi']) == 'delete'){ // mengkonfirmasi jika 'aksi' bernilai 'delete'
 				$nim = $_GET['nim']; // ambil nilai nim
-				$cek = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE nim='$nim'"); // query untuk memilih entri dengan nim yang dipilih
+				$cek = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE nim='$nim'"); // query untuk memilih entri dengan nim yang dipilih
 				if(mysqli_num_rows($cek) == 0){ // mengecek jika tidak ada entri nim yang dipilih
 					echo '<div class="alert alert-info alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> Data tidak ditemukan.</div>'; // maka tampilkan 'Data tidak ditemukan.'
 				}else{ // mengecek jika terdapat entri nim yang dipilih
-					$delete = mysqli_query($koneksi, "DELETE FROM tbl_mahasiswa WHERE nim='$nim'"); // query untuk menghapus
+					$delete = mysqli_query($koneksi, "DELETE FROM tbl_siswa WHERE nim='$nim'"); // query untuk menghapus
 					if($delete){ // jika query delete berhasil dieksekusi
 						echo '<div class="alert alert-primary alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> Data berhasil dihapus.</div>'; // maka tampilkan 'Data berhasil dihapus.'
 					}else{ // jika query delete gagal dieksekusi
@@ -56,9 +56,9 @@ include("../koneksi.php"); // memanggil file koneksi.php untuk koneksi ke databa
 					</tr>
 					<?php
 					if($filter){
-						$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa WHERE level='$filter' ORDER BY nim ASC"); // query jika filter dipilih
+						$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa WHERE level='$filter' ORDER BY nim ASC"); // query jika filter dipilih
 					}else{
-						$sql = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa ORDER BY nim ASC"); // jika tidak ada filter maka tampilkan semua entri
+						$sql = mysqli_query($koneksi, "SELECT * FROM tbl_siswa ORDER BY nim ASC"); // jika tidak ada filter maka tampilkan semua entri
 					}
 					if(mysqli_num_rows($sql) == 0){ 
 						echo '<tr><td colspan="14">Data Tidak Ada.</td></tr>'; // jika tidak ada entri di database maka tampilkan 'Data Tidak Ada.'
